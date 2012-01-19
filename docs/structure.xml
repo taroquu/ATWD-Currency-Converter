@@ -1,0 +1,1964 @@
+<?xml version="1.0"?>
+<project version="0.16.0" title="">
+  <file path="\dao\AbstractDao.php" hash="a574bb0bfc093d375d8387b8a068c057" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \dao\AbstractDao.php</error>
+    </parse_markers>
+    <class final="false" abstract="true" line="14" namespace="default" package="Default">
+      <name>AbstractDao</name>
+      <extends/>
+      <full_name>\AbstractDao</full_name>
+      <docblock>
+        <description>Super class for dao's providing query and update methods
+Provideds error handling</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="20" package="Default">
+        <name>$source</name>
+        <default/>
+        <docblock>
+          <description>The data source object</description>
+          <long-description>
+</long-description>
+          <tag line="16" name="var" description="" type="\DataSource">
+            <type by_reference="false">\DataSource</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="26" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Create a new Dao</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="36" package="Default">
+        <name>query</name>
+        <docblock>
+          <description>Run a query on the database</description>
+          <long-description>
+</long-description>
+          <tag line="31" name="param" description="The SQL query to run" type="string" variable="$query">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="31" name="return" description="The result set reference" type="\reference">
+            <type by_reference="false">\reference</type>
+          </tag>
+        </docblock>
+        <argument line="36">
+          <name>$query</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="55" package="Default">
+        <name>update</name>
+        <docblock>
+          <description>Run a query on the database (update/insert) that will not produce
+a result set</description>
+          <long-description>
+</long-description>
+          <tag line="50" name="param" description="The result set reference" type="string" variable="$query">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="55">
+          <name>$query</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\dao\CurrencyDao.php" hash="43ad0773ee027834e7cb605e7777b6a1" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \dao\CurrencyDao.php</error>
+    </parse_markers>
+    <interface namespace="default" line="13" package="Default">
+      <name>CurrencyDao</name>
+      <extends/>
+      <full_name>\CurrencyDao</full_name>
+      <docblock>
+        <description>Dao interface for currency information</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="19" package="Default">
+        <name>getAvailableCurrencyCodes</name>
+        <docblock>
+          <description>Get the currency codes supported</description>
+          <long-description>
+</long-description>
+          <tag line="15" name="return" description="An arry of the supported codes" type="array">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="26" package="Default">
+        <name>getInfoFor</name>
+        <docblock>
+          <description>Get the information about the currency</description>
+          <long-description>
+</long-description>
+          <tag line="21" name="param" description="The 3 digit currency code" type="string" variable="$code">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="21" name="return" description="Info about the currency" type="\CurrencyInfo">
+            <type by_reference="false">\CurrencyInfo</type>
+          </tag>
+        </docblock>
+        <argument line="26">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="\dao\CurrencyDaoImpl.php" hash="8ef6517e052631f541c3fb19bcdff6af" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \dao\CurrencyDaoImpl.php</error>
+      <notice line="33">Argument $code is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>CurrencyDaoImpl</name>
+      <extends>\AbstractDao</extends>
+      <full_name>\CurrencyDaoImpl</full_name>
+      <docblock>
+        <description>Implementation of CurrencyDao</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <implements>\CurrencyDao</implements>
+      <method final="false" abstract="false" static="false" visibility="public" line="19" package="Default">
+        <name>getAvailableCurrencyCodes</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="33" package="Default">
+        <name>getInfoFor</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="33">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\dao\DataSource.php" hash="c49129c9f5287ff5cba145c20c8f863d" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \dao\DataSource.php</error>
+      <error line="15">No DocBlock was found for Property $connection</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="13" namespace="default" package="Default">
+      <name>DataSource</name>
+      <extends/>
+      <full_name>\DataSource</full_name>
+      <docblock>
+        <description>Object to store the connection reference to a database</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="15" package="Default">
+        <name>$connection</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="24" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Establish a new database connection</description>
+          <long-description>
+</long-description>
+          <tag line="17" name="param" description="" type="string" variable="$host">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="17" name="param" description="" type="string" variable="$user">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="17" name="param" description="" type="string" variable="$password">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="17" name="param" description="" type="string" variable="$database">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="24">
+          <name>$host</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$user</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$password</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$database</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="33" package="Default">
+        <name>getConnection</name>
+        <docblock>
+          <description>Get the connection reference</description>
+          <long-description>
+</long-description>
+          <tag line="29" name="return" description="the conection reference" type="\reference">
+            <type by_reference="false">\reference</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="41" package="Default">
+        <name>__destruct</name>
+        <docblock>
+          <description>Close the connection on destruct</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="\dao\ExchangeDao.php" hash="2feca96227a5dc40513f2cc8b8a5a678" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \dao\ExchangeDao.php</error>
+      <notice line="21">Name of argument $currencyCode does not match with function Docblock</notice>
+    </parse_markers>
+    <interface namespace="default" line="14" package="Default">
+      <name>ExchangeDao</name>
+      <extends/>
+      <full_name>\ExchangeDao</full_name>
+      <docblock>
+        <description>Dao interface for exchange information</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="21" package="Default">
+        <name>getLastUpdate</name>
+        <docblock>
+          <description>Get the last update information for a rate</description>
+          <long-description>
+</long-description>
+          <tag line="16" name="param" description="The 3 digit currency code" type="string" variable="$code">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="16" name="return" description="the timestamp of the last update" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="28" package="Default">
+        <name>updateRate</name>
+        <docblock>
+          <description>Update a rate</description>
+          <long-description>
+</long-description>
+          <tag line="23" name="param" description="The 3 digit currency code" type="string" variable="$code">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="23" name="param" description="The new value" type="float" variable="$value">
+            <type by_reference="false">\float</type>
+          </tag>
+        </docblock>
+        <argument line="28">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="\dao\ExchangeDaoImpl.php" hash="fa2328ea10fb6ea83c2580507b042a4a" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \dao\ExchangeDaoImpl.php</error>
+      <notice line="19">Argument $currencyCode is missing from the function Docblock</notice>
+      <notice line="31">Argument $code is missing from the function Docblock</notice>
+      <notice line="31">Argument $value is missing from the function Docblock</notice>
+      <notice line="31">Argument $time is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>ExchangeDaoImpl</name>
+      <extends>\AbstractDao</extends>
+      <full_name>\ExchangeDaoImpl</full_name>
+      <docblock>
+        <description>Implementation of Exchange Dao</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <implements>\ExchangeDao</implements>
+      <method final="false" abstract="false" static="false" visibility="public" line="19" package="Default">
+        <name>getLastUpdate</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="19">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="31" package="Default">
+        <name>updateRate</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="31">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$time</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\domain\ConversionRequest.php" hash="4acd0cb803bd93b9f22e8044463448bb" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \domain\ConversionRequest.php</error>
+      <critical line="16">No short description for property $amount</critical>
+      <critical line="21">No short description for property $from</critical>
+      <critical line="26">No short description for property $to</critical>
+      <critical line="31">No short description for method __construct</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>ConversionRequest</name>
+      <extends/>
+      <full_name>\ConversionRequest</full_name>
+      <docblock>
+        <description>A domain object for a conversion request</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="19" package="Default">
+        <name>$amount</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="16" name="var" description="the amount to convert" type="float">
+            <type by_reference="false">\float</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="24" package="Default">
+        <name>$from</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="21" name="var" description="the from currerncy code" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="29" package="Default">
+        <name>$to</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="26" name="var" description="the to currency code" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="37" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="31" name="param" description="The amount to convert" type="float" variable="$amount">
+            <type by_reference="false">\float</type>
+          </tag>
+          <tag line="31" name="param" description="The from currency code" type="string" variable="$from">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="31" name="param" description="The to currency code" type="string" variable="$to">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="37">
+          <name>$amount</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$from</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$to</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="48" package="Default">
+        <name>__get</name>
+        <docblock>
+          <description>Generic getter</description>
+          <long-description>
+</long-description>
+          <tag line="44" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="58" package="Default">
+        <name>__set</name>
+        <docblock>
+          <description>Generic setting</description>
+          <long-description>
+</long-description>
+          <tag line="53" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="53" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="58">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="58">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\domain\ConversionResponse.php" hash="515a9aebb9529033855e59676b083cb2" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \domain\ConversionResponse.php</error>
+      <critical line="16">No short description for property $from</critical>
+      <critical line="21">No short description for property $to</critical>
+      <critical line="26">No short description for property $rate</critical>
+      <critical line="31">No short description for property $fromAmount</critical>
+      <critical line="36">No short description for property $toAmount</critical>
+      <critical line="41">No short description for method __construct</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>ConversionResponse</name>
+      <extends/>
+      <full_name>\ConversionResponse</full_name>
+      <docblock>
+        <description>A domain for a conversion response</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="19" package="Default">
+        <name>$from</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="16" name="var" description="The from code" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="24" package="Default">
+        <name>$to</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="21" name="var" description="The to code" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="29" package="Default">
+        <name>$rate</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="26" name="var" description="The exchange rate" type="float">
+            <type by_reference="false">\float</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="34" package="Default">
+        <name>$fromAmount</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="31" name="var" description="The from amount" type="float">
+            <type by_reference="false">\float</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="39" package="Default">
+        <name>$toAmount</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="36" name="var" description="The converted (to) amount" type="float">
+            <type by_reference="false">\float</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="49" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="41" name="param" description="The from code" type="string" variable="$from">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="41" name="param" description="The to code" type="string" variable="$to">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="41" name="param" description="The from amount" type="float" variable="$fromAmount">
+            <type by_reference="false">\float</type>
+          </tag>
+          <tag line="41" name="param" description="The to amount (converted amount)" type="float" variable="$toAmount">
+            <type by_reference="false">\float</type>
+          </tag>
+          <tag line="41" name="param" description="The exchange rate" type="float" variable="$rate">
+            <type by_reference="false">\float</type>
+          </tag>
+        </docblock>
+        <argument line="49">
+          <name>$from</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="49">
+          <name>$to</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="49">
+          <name>$fromAmount</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="49">
+          <name>$toAmount</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="49">
+          <name>$rate</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="62" package="Default">
+        <name>__get</name>
+        <docblock>
+          <description>Generic getter</description>
+          <long-description>
+</long-description>
+          <tag line="58" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="62">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="72" package="Default">
+        <name>__set</name>
+        <docblock>
+          <description>Generic setting</description>
+          <long-description>
+</long-description>
+          <tag line="67" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="67" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="72">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="72">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\domain\CurrencyInfo.php" hash="cc00e74e762e206f62638873865388fc" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \domain\CurrencyInfo.php</error>
+      <critical line="16">No short description for property $rate</critical>
+      <critical line="21">No short description for property $code</critical>
+      <critical line="26">No short description for property $locations</critical>
+      <critical line="31">No short description for property $currency</critical>
+      <critical line="36">No short description for method __construct</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>CurrencyInfo</name>
+      <extends/>
+      <full_name>\CurrencyInfo</full_name>
+      <docblock>
+        <description>A domain object for information about a currency</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="19" package="Default">
+        <name>$rate</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="16" name="var" description="The exchange rate" type="float">
+            <type by_reference="false">\float</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="24" package="Default">
+        <name>$code</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="21" name="var" description="The currency code" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="29" package="Default">
+        <name>$locations</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="26" name="var" description="The countries were the currencie is used" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="34" package="Default">
+        <name>$currency</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="31" name="var" description="Information about the currency" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="43" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="36" name="param" description="The exchange rate" type="float" variable="$rate">
+            <type by_reference="false">\float</type>
+          </tag>
+          <tag line="36" name="param" description="The currency code" type="string" variable="$code">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="36" name="param" description="The countries were the currencie is used" type="string" variable="$currency">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="36" name="param" description="Information about the currency" type="string" variable="$locations">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$rate</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="43">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="43">
+          <name>$currency</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="43">
+          <name>$locations</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="55" package="Default">
+        <name>__get</name>
+        <docblock>
+          <description>Generic getter</description>
+          <long-description>
+</long-description>
+          <tag line="51" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="55">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="65" package="Default">
+        <name>__set</name>
+        <docblock>
+          <description>Generic setting</description>
+          <long-description>
+</long-description>
+          <tag line="60" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="60" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="65">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="65">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\exceptions\ConfigErrorCodeException.php" hash="cb67b62498d6c534f3c04837b143a3b2" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \exceptions\ConfigErrorCodeException.php</error>
+      <critical line="17">No short description for method __construct</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="15" namespace="default" package="Default">
+      <name>ConfigErrorCodeException</name>
+      <extends>\RuntimeException</extends>
+      <full_name>\ConfigErrorCodeException</full_name>
+      <docblock>
+        <description>An exception which extracts its message from the config file based on error
+code</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="21" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="17" name="param" description="The error code" type="int" variable="$code">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\handlers\AutoLoader.php" hash="07c8965b9f949d216907fdf9dc601783" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \handlers\AutoLoader.php</error>
+      <critical line="17">No short description for property $classes</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="15" namespace="default" package="Default">
+      <name>AutoLoader</name>
+      <extends/>
+      <full_name>\AutoLoader</full_name>
+      <docblock>
+        <description>An auto loader for classes
+Registers the auto load handler and sets up an array of all the classes and
+their file locations</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="21" package="Default">
+        <name>$classes</name>
+        <default>array()</default>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="17" name="var" description="An array of classes and their files" type="array">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="27" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Setup the array of classes and files</description>
+          <long-description>
+</long-description>
+          <tag line="23" name="param" description="The base directory of the application" type="string" variable="$baseDir">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="27">
+          <name>$baseDir</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="64" package="Default">
+        <name>autoLoad</name>
+        <docblock>
+          <description>Internal method for loading classes, used by spl_autoload_register</description>
+          <long-description>&lt;p&gt;This method will trigger php error on failure instead of throwing exceptions
+as exceptions are caught internally by the php auto loader&lt;/p&gt;
+</long-description>
+          <tag line="56" name="param" description="the name of the class to load" type="String" variable="$className">
+            <type by_reference="false">\String</type>
+          </tag>
+        </docblock>
+        <argument line="64">
+          <name>$className</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\handlers\ErrorHandler.php" hash="c4047cb880bcbf39e19e531535068694" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \handlers\ErrorHandler.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>ErrorHandler</name>
+      <extends/>
+      <full_name>\ErrorHandler</full_name>
+      <docblock>
+        <description>Handles uncaught exceptions and PHP errors</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="19" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Registers the handlers</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="33" package="Default">
+        <name>onError</name>
+        <docblock>
+          <description>Called by the error handler, throws an error in service exception</description>
+          <long-description>
+</long-description>
+          <tag line="25" name="see" description="\http://uk.php.net/manual/en/function.set-error-handler.php" refers="\http://uk.php.net/manual/en/function.set-error-handler.php"/>
+          <tag line="25" name="param" description="The first parameter, errno, contains the level of the error raised, as an integer." type="int" variable="$errno">
+            <type by_reference="false">\int</type>
+          </tag>
+          <tag line="25" name="param" description="The second parameter, errstr, contains the error message, as a string." type="string" variable="$errstr">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="25" name="param" description="The third parameter is optional, errfile, which contains the filename that the error was raised in, as a string." type="string" variable="$errfile">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="25" name="param" description="The fourth parameter is optional, errline, which contains the line number the error was raised at, as an integer." type="int" variable="$errline">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+        <argument line="33">
+          <name>$errno</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="33">
+          <name>$errstr</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="33">
+          <name>$errfile</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="33">
+          <name>$errline</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="44" package="Default">
+        <name>onException</name>
+        <docblock>
+          <description>Called when an exception is not caught by a catch block.</description>
+          <long-description>&lt;p&gt;Runs through the xml helper to produce a response&lt;/p&gt;
+</long-description>
+          <tag line="38" name="see" description="\http://uk.php.net/manual/en/function.set-exception-handler.php" refers="\http://uk.php.net/manual/en/function.set-exception-handler.php"/>
+          <tag line="38" name="param" description="The thrown exception" type="\Exception" variable="$exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="44">
+          <name>$exception</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\index.php" hash="aaa872e96fe50de87bd366892f8035ae" package="Default">
+    <docblock>
+      <description>The location of the config file</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="9">No Page-level DocBlock was found in file \index.php</error>
+    </parse_markers>
+    <include type="Require Once" line="17">
+      <name>handlers/AutoLoader.php</name>
+    </include>
+    <include type="Require Once" line="18">
+      <name>handlers/ErrorHandler.php</name>
+    </include>
+    <constant namespace="default" line="12" package="Default">
+      <name>CONFIG_FILE</name>
+      <value>'config/config.xml'</value>
+      <docblock>
+        <description>The location of the config file</description>
+        <long-description>
+</long-description>
+      </docblock>
+    </constant>
+  </file>
+  <file path="\service\ConfigHolder.php" hash="9b6c71c3ea09e8b7ee126e6bf0a87035" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \service\ConfigHolder.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="15" namespace="default" package="Default">
+      <name>ConfigHolder</name>
+      <extends/>
+      <full_name>\ConfigHolder</full_name>
+      <docblock>
+        <description>Loader and holder for the xml config
+This is a singleton</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="21" package="Default">
+        <name>$config</name>
+        <default/>
+        <docblock>
+          <description>The config</description>
+          <long-description>
+</long-description>
+          <tag line="17" name="var" description="the processed config" type="\SimpleXMLElement">
+            <type by_reference="false">\SimpleXMLElement</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="private" line="27" package="Default">
+        <name>$self</name>
+        <default/>
+        <docblock>
+          <description>An instance of itself</description>
+          <long-description>
+</long-description>
+          <tag line="23" name="var" description="" type="\ConfigHolder">
+            <type by_reference="false">\ConfigHolder</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="private" line="33" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Load the config and process using simple xml,
+set the static self property to the created instance</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" line="46" package="Default">
+        <name>getConfig</name>
+        <docblock>
+          <description>Get an instance of ConfigHolder, create one if none exists already</description>
+          <long-description>
+</long-description>
+          <tag line="42" name="return" description="" type="\ConfigHolder">
+            <type by_reference="false">\ConfigHolder</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="\service\ConversionService.php" hash="14bff9fdfefb992d34db6924a0648b4a" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \service\ConversionService.php</error>
+    </parse_markers>
+    <interface namespace="default" line="13" package="Default">
+      <name>ConversionService</name>
+      <extends/>
+      <full_name>\ConversionService</full_name>
+      <docblock>
+        <description>Service interface for converting currencies</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="20" package="Default">
+        <name>convertCurrency</name>
+        <docblock>
+          <description>Perform a currency conversion for the given request</description>
+          <long-description>
+</long-description>
+          <tag line="15" name="param" description="" type="\ConversionRequest" variable="$conversionRequest">
+            <type by_reference="false">\ConversionRequest</type>
+          </tag>
+          <tag line="15" name="return" description="The result of the conversion" type="\ConversionResponse">
+            <type by_reference="false">\ConversionResponse</type>
+          </tag>
+        </docblock>
+        <argument line="20">
+          <name>$conversionRequest</name>
+          <default/>
+          <type>ConversionRequest</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="27" package="Default">
+        <name>validateRequest</name>
+        <docblock>
+          <description>Validate that the request meets all requiremnts</description>
+          <long-description>
+</long-description>
+          <tag line="23" name="param" description="The request to validate" type="\ConversionRequest" variable="$conversionRequest">
+            <type by_reference="false">\ConversionRequest</type>
+          </tag>
+        </docblock>
+        <argument line="27">
+          <name>$conversionRequest</name>
+          <default/>
+          <type>ConversionRequest</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="33" package="Default">
+        <name>getAvailableCodes</name>
+        <docblock>
+          <description>Gets all of the currency codes supported by the applcation</description>
+          <long-description>
+</long-description>
+          <tag line="29" name="return" description="An array of codes" type="array">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="40" package="Default">
+        <name>createFromQueryString</name>
+        <docblock>
+          <description>Extract the paramters from the query string and create a conversion
+request object</description>
+          <long-description>
+</long-description>
+          <tag line="35" name="return" description="The request" type="\ConversionRequest">
+            <type by_reference="false">\ConversionRequest</type>
+          </tag>
+        </docblock>
+      </method>
+    </interface>
+  </file>
+  <file path="\service\ConversionServiceImpl.php" hash="49bf0472d283ed977b94aaea848764bf" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \service\ConversionServiceImpl.php</error>
+      <critical line="15">No short description for property $currencyDao</critical>
+      <critical line="21">No short description for property $exchange</critical>
+      <notice line="39">Argument $conversionRequest is missing from the function Docblock</notice>
+      <notice line="55">Argument $conversionRequest is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="13" namespace="default" package="Default">
+      <name>ConversionServiceImpl</name>
+      <extends/>
+      <full_name>\ConversionServiceImpl</full_name>
+      <docblock>
+        <description>An implemntation of the Conversion Service</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="autho" description="08002579"/>
+      </docblock>
+      <implements>\ConversionService</implements>
+      <property final="false" static="false" visibility="private" line="19" package="Default">
+        <name>$currencyDao</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="15" name="var" description="" type="\CurrencyDao">
+            <type by_reference="false">\CurrencyDao</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="25" package="Default">
+        <name>$exchange</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="21" name="var" description="" type="\RatesService">
+            <type by_reference="false">\RatesService</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="30" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Load DAO's from the resource holder</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="39" package="Default">
+        <name>convertCurrency</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="39">
+          <name>$conversionRequest</name>
+          <default/>
+          <type>ConversionRequest</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="55" package="Default">
+        <name>validateRequest</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="55">
+          <name>$conversionRequest</name>
+          <default/>
+          <type>ConversionRequest</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="77" package="Default">
+        <name>getAvailableCodes</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="85" package="Default">
+        <name>createFromQueryString</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="\service\CurrencyXMLHelper.php" hash="45314130a3f203561a56ec3801513b60" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \service\CurrencyXMLHelper.php</error>
+      <error line="44">No DocBlock was found for Method proccessCurrencyInfo</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>CurrencyXMLHelper</name>
+      <extends/>
+      <full_name>\CurrencyXMLHelper</full_name>
+      <docblock>
+        <description>Helper class for formating xml output</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" line="21" package="Default">
+        <name>getErrorResponseXML</name>
+        <docblock>
+          <description>Produce an XML response for the given exception</description>
+          <long-description>
+</long-description>
+          <tag line="16" name="param" description="" type="\Exception" variable="$exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+          <tag line="16" name="return" description="The xml" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$exception</name>
+          <default/>
+          <type>Exception</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" line="34" package="Default">
+        <name>getResponseXML</name>
+        <docblock>
+          <description>Produce an XML response for the given conversion response</description>
+          <long-description>
+</long-description>
+          <tag line="29" name="param" description="" type="\ConversionResponse" variable="$convresponse">
+            <type by_reference="false">\ConversionResponse</type>
+          </tag>
+          <tag line="29" name="return" description="The xml" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$convresponse</name>
+          <default/>
+          <type>ConversionResponse</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="private" line="44" package="Default">
+        <name>proccessCurrencyInfo</name>
+        <argument line="44">
+          <name>$info</name>
+          <default/>
+          <type>CurrencyInfo</type>
+        </argument>
+        <argument line="44">
+          <name>$parentElement</name>
+          <default/>
+          <type>SimpleXMLElement</type>
+        </argument>
+        <argument line="44">
+          <name>$nodeName</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$ammount</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\service\RatesService.php" hash="450322d76c7e85cead54e02da0e86645" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \service\RatesService.php</error>
+    </parse_markers>
+    <interface namespace="default" line="13" package="Default">
+      <name>RatesService</name>
+      <extends/>
+      <full_name>\RatesService</full_name>
+      <docblock>
+        <description>Service for dealing with exchange rates</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="19" package="Default">
+        <name>updateRate</name>
+        <docblock>
+          <description>Locate the most recent rate for the given code and update the cached value</description>
+          <long-description>
+</long-description>
+          <tag line="15" name="param" description="The code to update" type="string" variable="$currencyCode">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="19">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="26" package="Default">
+        <name>lastUpdated</name>
+        <docblock>
+          <description>Get the last update timestamp for the given currency code</description>
+          <long-description>
+</long-description>
+          <tag line="21" name="param" description="The code to check" type="string" variable="$currencyCode">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="21" name="return" description="The timestamp of the last upedate" type="string">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="26">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="34" package="Default">
+        <name>affirmRate</name>
+        <docblock>
+          <description>Check whether the rate for the given currency needs to be updated
+based on the last update time. Updates if it does</description>
+          <long-description>
+</long-description>
+          <tag line="28" name="param" description="The code to update" type="string" variable="$currencyCode">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="28" name="return" description="true if the rate was updated, false otherwise" type="boolean">
+            <type by_reference="false">\boolean</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="\service\RatesServiceImpl.php" hash="251ad9dcabc46bb360b7b66b6535f57e" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \service\RatesServiceImpl.php</error>
+      <error line="16">No DocBlock was found for Property $exchangeDao</error>
+      <error line="17">No DocBlock was found for Property $exchangeWsao</error>
+      <notice line="31">Argument $currencyCode is missing from the function Docblock</notice>
+      <notice line="45">Argument $currencyCode is missing from the function Docblock</notice>
+      <notice line="53">Argument $currencyCode is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>RatesServiceImpl</name>
+      <extends/>
+      <full_name>\RatesServiceImpl</full_name>
+      <docblock>
+        <description>A implemntation of the rate service</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <implements>\RatesService</implements>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$exchangeDao</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="private" line="17" package="Default">
+        <name>$exchangeWsao</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="22" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Extract the wsao and the exchagne dao from the resource holder</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="31" package="Default">
+        <name>affirmRate</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="31">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="45" package="Default">
+        <name>lastUpdated</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="45">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="53" package="Default">
+        <name>updateRate</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="53">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\service\ResourceHolder.php" hash="a55f239db1d7a1fce666bf5c4978db2c" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \service\ResourceHolder.php</error>
+      <critical line="18">No short description for property $resources</critical>
+      <critical line="23">No short description for property $source</critical>
+      <critical line="29">No short description for property $impl</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="16" namespace="default" package="Default">
+      <name>ResourceHolder</name>
+      <extends/>
+      <full_name>\ResourceHolder</full_name>
+      <docblock>
+        <description>Singleton that instantates and stores instances of objects allowing them
+to used more than once with only a single instantation. Of course all objects
+used in this way are expected to be stateless.</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <property final="false" static="true" visibility="private" line="21" package="Default">
+        <name>$resources</name>
+        <default>array()</default>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="18" name="var" description="The instantated objects, stored with the name as the key" type="array">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="private" line="27" package="Default">
+        <name>$source</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="23" name="var" description="Stores the data source object containg the connection resource" type="\DataSource">
+            <type by_reference="false">\DataSource</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="private" line="33" package="Default">
+        <name>$impl</name>
+        <default>true</default>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="29" name="var" description="Whether to use a Impl resource or a stub" type="boolean">
+            <type by_reference="false">\boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="private" line="38" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>private constructor, prevent instantiation from other objects</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" line="48" package="Default">
+        <name>getResource</name>
+        <docblock>
+          <description>Obtain the request resource, if it exists</description>
+          <long-description>
+</long-description>
+          <tag line="43" name="param" description="The name of the resource" type="string" variable="$name">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="43" name="return" description="The resource" type="object">
+            <type by_reference="false">\object</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" line="69" package="Default">
+        <name>getDataSource</name>
+        <docblock>
+          <description>Get the data source</description>
+          <long-description>
+</long-description>
+          <tag line="65" name="return" description="The data source object" type="\DataSource">
+            <type by_reference="false">\DataSource</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="\wsao\AbstractWsao.php" hash="55b8847b81300c1b0a9d6e872a5fa8db" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \wsao\AbstractWsao.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="15" namespace="default" package="Default">
+      <name>AbstractWsao</name>
+      <extends/>
+      <full_name>\AbstractWsao</full_name>
+      <docblock>
+        <description>Abstract web serice access object provideing generic functionality to
+perform requests on xml feeds</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="21" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Extract any web service related config and setup xml settings as needed
+Currently this is just the proxy</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="38" package="Default">
+        <name>request</name>
+        <docblock>
+          <description>Send an HTTP request on the given URL and process into xml</description>
+          <long-description>
+</long-description>
+          <tag line="33" name="param" description="The url for the request" type="string" variable="$url">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="33" name="return" description="The resulting xml response" type="\SimpleXMLElement">
+            <type by_reference="false">\SimpleXMLElement</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$url</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\wsao\CoinmillWsaoImpl.php" hash="6976d4acdae34fb1e01cc65da5117fc6" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \wsao\CoinmillWsaoImpl.php</error>
+      <notice line="19">Argument $currencyCode is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>CoinmillWsaoImpl</name>
+      <extends>\AbstractWsao</extends>
+      <full_name>\CoinmillWsaoImpl</full_name>
+      <docblock>
+        <description>Web service access object for coinmill.com exchange rates feeds</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <implements>\ExchangeWsao</implements>
+      <method final="false" abstract="false" static="false" visibility="public" line="19" package="Default">
+        <name>getExchangeRate</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="19">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\wsao\ExchangeWsao.php" hash="80d8b4f85685c91c78a788a12b0a4031" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \wsao\ExchangeWsao.php</error>
+    </parse_markers>
+    <interface namespace="default" line="14" package="Default">
+      <name>ExchangeWsao</name>
+      <extends/>
+      <full_name>\ExchangeWsao</full_name>
+      <docblock>
+        <description>Currency exchange rate wsao.</description>
+        <long-description>&lt;p&gt;Implemntations are responsable for returning the rate for a currency code for 1 USD&lt;/p&gt;
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="21" package="Default">
+        <name>getExchangeRate</name>
+        <docblock>
+          <description>Locate the latest exchanage rate for the given currency code to 1 USD</description>
+          <long-description>
+</long-description>
+          <tag line="16" name="param" description="The currency code to find the exchange rate for" type="string" variable="$currencyCode">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag line="16" name="return" description="the latest rate" type="float">
+            <type by_reference="false">\float</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="\wsao\ExchangeWsaoCollectionImpl.php" hash="d3db87a75dd364a152ee9455548f8777" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \wsao\ExchangeWsaoCollectionImpl.php</error>
+      <error line="19">No DocBlock was found for Property $exchangeWsaos</error>
+      <notice line="36">Argument $currencyCode is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="17" namespace="default" package="Default">
+      <name>ExchangeWsaoCollectionImpl</name>
+      <extends/>
+      <full_name>\ExchangeWsaoCollectionImpl</full_name>
+      <docblock>
+        <description>A collection of exchange WSAO's that can be utilised as though there was only
+one of them. Allowing a failure in one of the internal WSAO's to fallback on
+another</description>
+        <long-description>
+</long-description>
+        <tag line="10" name="author" description="08002579"/>
+      </docblock>
+      <implements>\ExchangeWsao</implements>
+      <property final="false" static="false" visibility="private" line="19" package="Default">
+        <name>$exchangeWsaos</name>
+        <default>array()</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="24" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>Extract all wsao's from the resource holder</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="36" package="Default">
+        <name>getExchangeRate</name>
+        <docblock>
+          <description>{@inheritdoc}
+Iterate through each wsao until a rate is returned for the given value</description>
+          <long-description>
+</long-description>
+          <tag line="31" name="return" description="The rate or false if none could be found" type="mixed">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="36">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\wsao\FXExchangeWsaoImpl.php" hash="86e7ac8a4158631f059432764841811c" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \wsao\FXExchangeWsaoImpl.php</error>
+      <notice line="19">Argument $currencyCode is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="14" namespace="default" package="Default">
+      <name>FXExchangeWsaoImpl</name>
+      <extends>\AbstractWsao</extends>
+      <full_name>\FXExchangeWsaoImpl</full_name>
+      <docblock>
+        <description>Implementation of the wsao for the fxexchangerate.com feed</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <implements>\ExchangeWsao</implements>
+      <method final="false" abstract="false" static="false" visibility="public" line="19" package="Default">
+        <name>getExchangeRate</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="19">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\wsao\YahooExchangeWsaoImpl.php" hash="df8b793b505f5dbb27074a8bf635b335" package="Default">
+    <docblock>
+      <description>UFCEWT-20-3  Advanced Topics in Web Development
+08002579
+Restful Currency Convert Application</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="3">No Page-level DocBlock was found in file \wsao\YahooExchangeWsaoImpl.php</error>
+      <notice line="20">Argument $currencyCode is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="15" namespace="default" package="Default">
+      <name>YahooExchangeWsaoImpl</name>
+      <extends>\AbstractWsao</extends>
+      <full_name>\YahooExchangeWsaoImpl</full_name>
+      <docblock>
+        <description>An implementation of the exchange wsa for the yahoo finance feed
+working through YQL</description>
+        <long-description>
+</long-description>
+        <tag line="9" name="author" description="08002579"/>
+      </docblock>
+      <implements>\ExchangeWsao</implements>
+      <method final="false" abstract="false" static="false" visibility="public" line="20" package="Default">
+        <name>getExchangeRate</name>
+        <docblock>
+          <description>{@inheritdoc}</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="20">
+          <name>$currencyCode</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <package name="Default"/>
+  <namespace name="default"/>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>

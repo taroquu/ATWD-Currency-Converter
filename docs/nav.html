@@ -1,0 +1,167 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DocBlox Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript" src="js/sidebar.js"></script><div xmlns="" id="sidebar">
+<div id="sidebar-header">
+<img src="images/icon48x48.png" id="sidebar-logo" alt="Logo"><h1>DocBlox</h1>
+<div style="clear: both"></div>
+</div>
+<div id="sidebar-nav">
+<h3 id="sidebar-dashboard">
+<img class="icon" src="css/docblox/images/icons/dashboard.png" alt="Dashboard"><a href="content.html" class="link" target="content">Dashboard</a>
+</h3>
+<div style="display: none"></div>
+<h3 id="sidebar-files">
+<img src="css/docblox/images/icons/files.png" alt="Files"><a href="#files">Files</a>
+</h3>
+<div class="sidebar-section">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="file"><a href="db_dao_AbstractDao.html" target="content">\dao\AbstractDao.php</a></span><ul id="files_a574bb0bfc093d375d8387b8a068c057" class="filetree"><li><span class="class"><a href="db_dao_AbstractDao.html#%5CAbstractDao" target="content">AbstractDao<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_dao_CurrencyDao.html" target="content">\dao\CurrencyDao.php</a></span><ul id="files_43ad0773ee027834e7cb605e7777b6a1" class="filetree"><li><span class="interface"><a href="db_dao_CurrencyDao.html#%5CCurrencyDao" target="content">CurrencyDao<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_dao_CurrencyDaoImpl.html" target="content">\dao\CurrencyDaoImpl.php</a></span><ul id="files_8ef6517e052631f541c3fb19bcdff6af" class="filetree"><li><span class="class"><a href="db_dao_CurrencyDaoImpl.html#%5CCurrencyDaoImpl" target="content">CurrencyDaoImpl<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_dao_DataSource.html" target="content">\dao\DataSource.php</a></span><ul id="files_c49129c9f5287ff5cba145c20c8f863d" class="filetree"><li><span class="class"><a href="db_dao_DataSource.html#%5CDataSource" target="content">DataSource<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_dao_ExchangeDao.html" target="content">\dao\ExchangeDao.php</a></span><ul id="files_2feca96227a5dc40513f2cc8b8a5a678" class="filetree"><li><span class="interface"><a href="db_dao_ExchangeDao.html#%5CExchangeDao" target="content">ExchangeDao<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_dao_ExchangeDaoImpl.html" target="content">\dao\ExchangeDaoImpl.php</a></span><ul id="files_fa2328ea10fb6ea83c2580507b042a4a" class="filetree"><li><span class="class"><a href="db_dao_ExchangeDaoImpl.html#%5CExchangeDaoImpl" target="content">ExchangeDaoImpl<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_domain_ConversionRequest.html" target="content">\domain\ConversionRequest.php</a></span><ul id="files_4acd0cb803bd93b9f22e8044463448bb" class="filetree"><li><span class="class"><a href="db_domain_ConversionRequest.html#%5CConversionRequest" target="content">ConversionRequest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_domain_ConversionResponse.html" target="content">\domain\ConversionResponse.php</a></span><ul id="files_515a9aebb9529033855e59676b083cb2" class="filetree"><li><span class="class"><a href="db_domain_ConversionResponse.html#%5CConversionResponse" target="content">ConversionResponse<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_domain_CurrencyInfo.html" target="content">\domain\CurrencyInfo.php</a></span><ul id="files_cc00e74e762e206f62638873865388fc" class="filetree"><li><span class="class"><a href="db_domain_CurrencyInfo.html#%5CCurrencyInfo" target="content">CurrencyInfo<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_exceptions_ConfigErrorCodeException.html" target="content">\exceptions\ConfigErrorCodeException.php</a></span><ul id="files_cb67b62498d6c534f3c04837b143a3b2" class="filetree"><li><span class="class"><a href="db_exceptions_ConfigErrorCodeException.html#%5CConfigErrorCodeException" target="content">ConfigErrorCodeException<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_handlers_AutoLoader.html" target="content">\handlers\AutoLoader.php</a></span><ul id="files_07c8965b9f949d216907fdf9dc601783" class="filetree"><li><span class="class"><a href="db_handlers_AutoLoader.html#%5CAutoLoader" target="content">AutoLoader<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_handlers_ErrorHandler.html" target="content">\handlers\ErrorHandler.php</a></span><ul id="files_c4047cb880bcbf39e19e531535068694" class="filetree"><li><span class="class"><a href="db_handlers_ErrorHandler.html#%5CErrorHandler" target="content">ErrorHandler<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_index.html" target="content">\index.php</a></span><ul id="files_aaa872e96fe50de87bd366892f8035ae" class="filetree"><li><span class="constant"><a href="db_index.html#::CONFIG_FILE" target="content">CONFIG_FILE<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_service_ConfigHolder.html" target="content">\service\ConfigHolder.php</a></span><ul id="files_9b6c71c3ea09e8b7ee126e6bf0a87035" class="filetree"><li><span class="class"><a href="db_service_ConfigHolder.html#%5CConfigHolder" target="content">ConfigHolder<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_service_ConversionService.html" target="content">\service\ConversionService.php</a></span><ul id="files_14bff9fdfefb992d34db6924a0648b4a" class="filetree"><li><span class="interface"><a href="db_service_ConversionService.html#%5CConversionService" target="content">ConversionService<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_service_ConversionServiceImpl.html" target="content">\service\ConversionServiceImpl.php</a></span><ul id="files_49bf0472d283ed977b94aaea848764bf" class="filetree"><li><span class="class"><a href="db_service_ConversionServiceImpl.html#%5CConversionServiceImpl" target="content">ConversionServiceImpl<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_service_CurrencyXMLHelper.html" target="content">\service\CurrencyXMLHelper.php</a></span><ul id="files_45314130a3f203561a56ec3801513b60" class="filetree"><li><span class="class"><a href="db_service_CurrencyXMLHelper.html#%5CCurrencyXMLHelper" target="content">CurrencyXMLHelper<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_service_RatesService.html" target="content">\service\RatesService.php</a></span><ul id="files_450322d76c7e85cead54e02da0e86645" class="filetree"><li><span class="interface"><a href="db_service_RatesService.html#%5CRatesService" target="content">RatesService<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_service_RatesServiceImpl.html" target="content">\service\RatesServiceImpl.php</a></span><ul id="files_251ad9dcabc46bb360b7b66b6535f57e" class="filetree"><li><span class="class"><a href="db_service_RatesServiceImpl.html#%5CRatesServiceImpl" target="content">RatesServiceImpl<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_service_ResourceHolder.html" target="content">\service\ResourceHolder.php</a></span><ul id="files_a55f239db1d7a1fce666bf5c4978db2c" class="filetree"><li><span class="class"><a href="db_service_ResourceHolder.html#%5CResourceHolder" target="content">ResourceHolder<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_wsao_AbstractWsao.html" target="content">\wsao\AbstractWsao.php</a></span><ul id="files_55b8847b81300c1b0a9d6e872a5fa8db" class="filetree"><li><span class="class"><a href="db_wsao_AbstractWsao.html#%5CAbstractWsao" target="content">AbstractWsao<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_wsao_CoinmillWsaoImpl.html" target="content">\wsao\CoinmillWsaoImpl.php</a></span><ul id="files_6976d4acdae34fb1e01cc65da5117fc6" class="filetree"><li><span class="class"><a href="db_wsao_CoinmillWsaoImpl.html#%5CCoinmillWsaoImpl" target="content">CoinmillWsaoImpl<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_wsao_ExchangeWsao.html" target="content">\wsao\ExchangeWsao.php</a></span><ul id="files_80d8b4f85685c91c78a788a12b0a4031" class="filetree"><li><span class="interface"><a href="db_wsao_ExchangeWsao.html#%5CExchangeWsao" target="content">ExchangeWsao<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_wsao_ExchangeWsaoCollectionImpl.html" target="content">\wsao\ExchangeWsaoCollectionImpl.php</a></span><ul id="files_d3db87a75dd364a152ee9455548f8777" class="filetree"><li><span class="class"><a href="db_wsao_ExchangeWsaoCollectionImpl.html#%5CExchangeWsaoCollectionImpl" target="content">ExchangeWsaoCollectionImpl<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_wsao_FXExchangeWsaoImpl.html" target="content">\wsao\FXExchangeWsaoImpl.php</a></span><ul id="files_86e7ac8a4158631f059432764841811c" class="filetree"><li><span class="class"><a href="db_wsao_FXExchangeWsaoImpl.html#%5CFXExchangeWsaoImpl" target="content">FXExchangeWsaoImpl<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_wsao_YahooExchangeWsaoImpl.html" target="content">\wsao\YahooExchangeWsaoImpl.php</a></span><ul id="files_df8b793b505f5dbb27074a8bf635b335" class="filetree"><li><span class="class"><a href="db_wsao_YahooExchangeWsaoImpl.html#%5CYahooExchangeWsaoImpl" target="content">YahooExchangeWsaoImpl<br></a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-packages">
+<img src="css/docblox/images/icons/packages.png" alt="Packages"><a href="#packages">Packages</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree"><li class="closed">
+<span class="folder">Default</span><ul>
+<li><span class="class"><a href="db_dao_AbstractDao.html#%5CAbstractDao" target="content">AbstractDao</a></span></li>
+<li><span class="class"><a href="db_wsao_AbstractWsao.html#%5CAbstractWsao" target="content">AbstractWsao</a></span></li>
+<li><span class="class"><a href="db_handlers_AutoLoader.html#%5CAutoLoader" target="content">AutoLoader</a></span></li>
+<li><span class="class"><a href="db_wsao_CoinmillWsaoImpl.html#%5CCoinmillWsaoImpl" target="content">CoinmillWsaoImpl</a></span></li>
+<li><span class="class"><a href="db_exceptions_ConfigErrorCodeException.html#%5CConfigErrorCodeException" target="content">ConfigErrorCodeException</a></span></li>
+<li><span class="class"><a href="db_service_ConfigHolder.html#%5CConfigHolder" target="content">ConfigHolder</a></span></li>
+<li><span class="class"><a href="db_domain_ConversionRequest.html#%5CConversionRequest" target="content">ConversionRequest</a></span></li>
+<li><span class="class"><a href="db_domain_ConversionResponse.html#%5CConversionResponse" target="content">ConversionResponse</a></span></li>
+<li><span class="interface"><a href="db_service_ConversionService.html#%5CConversionService" target="content">ConversionService</a></span></li>
+<li><span class="class"><a href="db_service_ConversionServiceImpl.html#%5CConversionServiceImpl" target="content">ConversionServiceImpl</a></span></li>
+<li><span class="interface"><a href="db_dao_CurrencyDao.html#%5CCurrencyDao" target="content">CurrencyDao</a></span></li>
+<li><span class="class"><a href="db_dao_CurrencyDaoImpl.html#%5CCurrencyDaoImpl" target="content">CurrencyDaoImpl</a></span></li>
+<li><span class="class"><a href="db_domain_CurrencyInfo.html#%5CCurrencyInfo" target="content">CurrencyInfo</a></span></li>
+<li><span class="class"><a href="db_service_CurrencyXMLHelper.html#%5CCurrencyXMLHelper" target="content">CurrencyXMLHelper</a></span></li>
+<li><span class="class"><a href="db_dao_DataSource.html#%5CDataSource" target="content">DataSource</a></span></li>
+<li><span class="class"><a href="db_handlers_ErrorHandler.html#%5CErrorHandler" target="content">ErrorHandler</a></span></li>
+<li><span class="interface"><a href="db_dao_ExchangeDao.html#%5CExchangeDao" target="content">ExchangeDao</a></span></li>
+<li><span class="class"><a href="db_dao_ExchangeDaoImpl.html#%5CExchangeDaoImpl" target="content">ExchangeDaoImpl</a></span></li>
+<li><span class="interface"><a href="db_wsao_ExchangeWsao.html#%5CExchangeWsao" target="content">ExchangeWsao</a></span></li>
+<li><span class="class"><a href="db_wsao_ExchangeWsaoCollectionImpl.html#%5CExchangeWsaoCollectionImpl" target="content">ExchangeWsaoCollectionImpl</a></span></li>
+<li><span class="class"><a href="db_wsao_FXExchangeWsaoImpl.html#%5CFXExchangeWsaoImpl" target="content">FXExchangeWsaoImpl</a></span></li>
+<li><span class="interface"><a href="db_service_RatesService.html#%5CRatesService" target="content">RatesService</a></span></li>
+<li><span class="class"><a href="db_service_RatesServiceImpl.html#%5CRatesServiceImpl" target="content">RatesServiceImpl</a></span></li>
+<li><span class="class"><a href="db_service_ResourceHolder.html#%5CResourceHolder" target="content">ResourceHolder</a></span></li>
+<li><span class="class"><a href="db_wsao_YahooExchangeWsaoImpl.html#%5CYahooExchangeWsaoImpl" target="content">YahooExchangeWsaoImpl</a></span></li>
+</ul>
+</li></ul>
+</div>
+<h3 id="sidebar-charts">
+<img src="css/docblox/images/icons/chart.png" alt="Charts"><a href="#charts">Charts</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/chart15x12.png');"><li><a href="graph.html" target="content">Class Inheritance Diagram</a></li></ul></div>
+<h3 id="sidebar-reports">
+<img src="css/docblox/images/icons/reports.png" alt="Reports"><a href="#reports">Reports</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/reports9x12.png');">
+<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
+<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
+<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
+</ul></div>
+</div>
+<div id="sidebar-footer">
+        Documentation is generated by <a href="http://docblox-project.org" target="_top"><img src="images/icon48x48.png" height="12" align="top" alt="Logo"> DocBlox 0.16.0</a>, images courtesy of <a href="http://glyphish.com/" target="_top">Glyphish</a>
+</div>
+</div></body></html>

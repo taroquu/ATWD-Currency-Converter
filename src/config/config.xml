@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    UFCEWT-20-3  Advanced Topics in Web Development
+    08002579
+    Restful Currency Convert Application
+    Configuration file
+-->
+
+<config>
+    <dataSource>
+        <host>localhost</host>
+        <user>basic</user>
+        <password>P@ssword1</password>
+        <database>currency</database>
+    </dataSource>
+    <!--<proxy>proxysg.uwe.ac.uk:8080</proxy>-->
+    <errors>
+        <error code="1000" message="Required parameter is missing" />    
+        <error code="1100" message="Parameter not recognized" />  
+        <error code="2000" message="Currency type not recognized" />  
+        <error code="2100" message="Currency amount must be to 2 decimal places" />  
+        <error code="3000" message="Service currently unavailable" />  
+        <error code="3100" message="Error in service" />  
+    </errors>
+    <feeds>
+        <fx>http://usd.fxexchangerate.com/{CODE}.xml</fx>    
+        <yahoo><![CDATA[http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%3D%22usd{CODE}%22&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys]]></yahoo>
+        <coinmill>http://coinmill.com/rss/USD_{CODE}.xml</coinmill>
+    </feeds>
+</config>
